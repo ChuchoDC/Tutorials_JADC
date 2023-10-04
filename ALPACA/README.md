@@ -4,7 +4,7 @@
 
 # Automated landmarking through pointcloud alignment and correspondence analysis (ALPACA)
 
-`ALPACA` provides fast landmark transfer from a 3D model and its associated landmark set to target 3D model(s) through pointcloud alignment and deformable mesh registration (please see the original publication https://doi.org/10.1111/2041-210X.13689 for a throrough review). Unlike the Slicermorph's semi-landmark methods, it does not require presence of fixed landmarks. Optimal set of parameters that gives the best correspondence can be investigated (and outcome can be visualized) in single alignment mode, and then applied to a number of 3D models in batch mode. Invoked first time, `ALPACA` needs your permission to download `open3D` library. Depending on the internet speed, download may take sometime but it is a one-time event.
+`ALPACA` Esta es una version (2)de prueba en Español para ver cómo funcionarían los tutoriales y a prendar a cargar los datos a GITHUB. provides fast landmark transfer from a 3D model and its associated landmark set to target 3D model(s) through pointcloud alignment and deformable mesh registration (please see the original publication https://doi.org/10.1111/2041-210X.13689 for a throrough review). Unlike the Slicermorph's semi-landmark methods, it does not require presence of fixed landmarks. Optimal set of parameters that gives the best correspondence can be investigated (and outcome can be visualized) in single alignment mode, and then applied to a number of 3D models in batch mode. Invoked first time, `ALPACA` needs your permission to download `open3D` library. Depending on the internet speed, download may take sometime but it is a one-time event.
 
 ## Module Overview
 Open the ALPACA module. 

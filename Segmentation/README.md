@@ -63,9 +63,14 @@ In this tutorial we will first introduce the different tools in the `Segment Edi
       1.  Overwrite all: The new segment can overwrite the others if it overlaps with them. In the image below, the yellow segment overwrote the green segment. 
       2.  Allow overlap: None of the other segments are overwritten in the image below the brown segment is overlapping with the green and yellow segments. * If you're not sure which option to use for the *Modify other segments* option, the *Allow overlap* is the safest option. 
       3.  Overwrite visible: I made the green and yellow segments invisible by clicking the eye buttons next to each segment, then painted with the blue segment, and it overwrote the brown segment. But when I turned the visibility of the green and yellow segments back on, they were overlapping with the blue segment and not overwritten. 
-    <img src="images/image5.png">
-    <img src="images/image6.png">
-    <img src="images/image7.png"> 
+    
+**Important Note:** By default, **Modify other segments** is set to _Overwrite All_. This can be changed to _Allow Overlap_ by user through the Application Settings (Edit->Application Settings->Segmentation). This menu allows other customization, such as choosing the default segmentation terminology to be used. 
+
+<img src="images/image5.png">
+
+<img src="images/image6.png">
+    
+<img src="images/image7.png"> 
     
   
 ------
@@ -74,7 +79,7 @@ In this tutorial we will first introduce the different tools in the `Segment Edi
 We won't cover every tool in detail, but here are a few you should spend some time playing with: 
   
 1. **Paint/Erase** are very useful as a starting point for some of the semi-automated methods. It is literally painting over pixels (or voxels). The important thing is to adjust the diameter and select between the sphere and circle brushes.
-  * Try using the pait tool without changing anything: simply paint over a slice in any of the red/yellow/green slice views. Then, move between slices (mouse wheel on any of the red/yellow/green views or use the slider at the top of them). Then, change to a sphere brush and try again. When you use a sphere brush, you are painting/erasing in 3D. Note the spherical or disk-shaped brush in 3D view when you are painting in slice view. 
+  * Try using the paint tool without changing anything: simply paint over a slice in any of the red/yellow/green slice views. Then, move between slices (mouse wheel on any of the red/yellow/green views or use the slider at the top of them). Then, change to a sphere brush and try again. When you use a sphere brush, you are painting/erasing in 3D. Note the spherical or disk-shaped brush in 3D view when you are painting in slice view. 
   
   <img src="images/image8.png">
   
@@ -164,15 +169,15 @@ We won't cover every tool in detail, but here are a few you should spend some ti
   
   <img src="images/gfs_2.png">
   
-  * Next I selected the paint too, but before I started paining I changed the masking options by switching the *Modify other segments* option to *Overwrite visible* and checking the *Editable intensity range* box. This will let us only paint voxels with the intensity values that exist in the teeth we are trying to segment. 
+  * Next I selected the paint tool, but before I started paining I changed the masking options by switching the *Modify other segments* option to *Overwrite visible* and checking the *Editable intensity range* box. This will let us only paint voxels with the intensity values that exist in the teeth we are trying to segment. 
   
   <img src="images/gfs_3.png">
   
-  * Now, just like we did in grow from seeds I have painted a slash every few slices (5 total slices in this example) on on each of the 4 teeth. The image below shows where I've pained in the 4 different viewing windows. 
+  * Now, just like we did in grow from seeds I have painted a slash every few slices (5 total slices in this example) on on each of the 4 teeth. The image below shows where I've painted in the 4 different viewing windows. 
   
   <img src="images/gfs_4.png">
   
-  * Now we can switch to the **Grow from seeds** tool. Hit the *Initialize* button (orange box in the image below), mine says update because I've already hit the button to initialize. To see the full restuls move the display slicer all the way to the right and hit the *Show 3D* button. Mine isn't perfect but it's done a decent job with minimal imputs. I can use the display slider to go back to my input display and keep updating with the paint tool until I get a better segmentation. 
+  * Now we can switch to the **Grow from seeds** tool. Hit the *Initialize* button (orange box in the image below), mine says update because I've already hit the button to initialize. To see the full results, move the display slicer all the way to the right and hit the *Show 3D* button. Mine isn't perfect but it's done a decent job with minimal imputs. I can use the display slider to go back to my input display and keep updating with the paint tool until I get a better segmentation. 
   
   <img src="images/gfs_5.png">
 
@@ -229,7 +234,8 @@ Let's go and check volume properties in `Volumes` module. Our image and LabelMap
 #### Models
 Go back to `Segmentations` module and export a Model of your segment. You can leave the output node as it is and it will create a new model hierarchy. If your segment is relatively small, it should take a short time. 
 
-This representation is not a volume anymore, it looks like the thing you saw when you hit Show 3D button in Segment Editor but this is not just a visualization. This is a new data structure with 3D points and polygons, a surface mesh. Go into the Data module and see it. You can turn off the visibility here and change the color etc. Slicer assigns the same name and color from the Segmentation. Models are not show in slice views. The color is again just for visualization and when you save the model, it is not written to the file. 
+This representation is not a volume anymore, it looks like the thing you saw when you hit Show 3D button in Segment Editor but this is not just a visualization. This is a new data structure with 3D points and polygons, a surface model. Go into the Data module and see it. You can turn off the visibility here and change the color etc. Slicer assigns the same name and color from the Segmentation. Models are not show in slice views. The color is again just for visualization and when you save the model, it is not written to the file. 
+
 ------
 
 ### Part 4: Additional tips, tricks, and more modules to check out
